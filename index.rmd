@@ -3,7 +3,7 @@
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-<img src="images/yiyuan_may2019.jpg" style="width:25%; border:10px solid; margin-right: 20px" align="left">
+<img src="images/yiyuan_may2019.JPG" style="width:25%; border:10px solid; margin-right: 20px" align="left">
 
 My name is Yiyuan Wu and I like to analyze data to answer research questions and test hypotheses.The combination of medicine and mathematics makes perfect career for me. Currently I investigate questions related to mental health through my work as a Research Biostatistician II at [Weill Cornell Medicine](http://hpr.weill.cornell.edu/divisions/hpe/) in the department of Health Policy & Research 
 
