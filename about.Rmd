@@ -1,0 +1,21 @@
+---
+title: <center> Welcome to Yiyuan's hub! </center>
+output: 
+  html_document:
+    css: style.css
+---
+
+<br>
+
+The website was created to keep updates on my learning, experiences and interested topics in  biostatistics, mathematics and medicine. I will frequently update on my recent talks, presentations, r packages etc.
+
+<center>*"life can only be understood backwards; *
+*but it must be lived forwards." --- Soren Kierkegaard *</center>
+
+<br>
+
+
+<center><img src="images/about-images.JPG" alt="hi" style="text-align:center;" width="350" height="250"></center>
+
+<br>
+
