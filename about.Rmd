@@ -15,7 +15,7 @@ The website was created to keep updates on my learning, experiences and interest
 <br>
 
 
-<center><img src="images/about-images.JPG" alt="hi" style="text-align:center;" width="350" height="250"></center>
+<center><img src="images/about-images.jpg" alt="hi" style="text-align:center;" width="350" height="250"></center>
 
 <br>
 
