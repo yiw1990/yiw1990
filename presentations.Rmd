@@ -33,7 +33,7 @@ output:
     
 * Yale University Thomas R. Ten Have Symposium, New Haven, CT, May 31, 2019
 
-    + *Dynamic prognosis of psychotic depression: a Bayesian joint modeling approach* [pdf](slides/dygraphs_ppt_rmd.pdf) | [html](slides/Exercises_dygraphs.html)
+    + *Dynamic prognosis of psychotic depression: a Bayesian joint modeling approach*  [html](Exercises_dygraphs.html)
     
 
     
