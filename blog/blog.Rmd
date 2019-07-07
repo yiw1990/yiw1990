@@ -1,0 +1,32 @@
+---
+title: "Blog"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+---
+<link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
+
+<br>
+
+<center>   
+
+<br>
+
+<img src="../images/family.JPG" alt="family" style="width:30%; border:0px solid">
+
+<br>
+
+**My 4th birthday **
+
+</center>
+
+<br><br>
+
+
+
+### 2019
+
+
+* My Personal Statement
+ [post](fitl-firstblog.html)
