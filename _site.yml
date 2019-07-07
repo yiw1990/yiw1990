@@ -13,8 +13,8 @@ navbar:
       href: research.html
     - text: "Presentations"
       href: presentations.html
-    - text: "Teaching"
-      href: teaching.html
+    - text: "Topics"
+      href: topics.html
     - text: "Blog"
       icon: fa-rss
       href: blog.html
@@ -28,8 +28,9 @@ navbar:
       
 output:
   html_document:
-  theme: paper
-  css: 'style.css'
+    theme: flatly
+    highlight: tango
+    css: 'styles.css'
   
   
   
