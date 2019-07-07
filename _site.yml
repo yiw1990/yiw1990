@@ -16,6 +16,7 @@ navbar:
     - text: "Teaching"
       href: teaching.html
     - text: "Blog"
+      icon: fa-rss
       href: blog.html
   right:
     - icon: fa-envelope fa-lg
