@@ -28,7 +28,7 @@ navbar:
       
 output:
   html_document:
-    theme: flatly
+    theme: united
     highlight: tango
     css: 'styles.css'
   
