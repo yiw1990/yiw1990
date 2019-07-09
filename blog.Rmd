@@ -4,11 +4,10 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: flatly
+    theme: united
     highlight: tango
 ---
 <link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
-
 <br>
 
 <center>   
@@ -23,12 +22,19 @@ output:
 
 </center>
 
-<br><br>
+<br>
+
+
+<br>
 
 
 
-### 2019
+## 2019
+
+| Date  | Topic | Link |
+|:----------------|:-----------------------------------------------------------------|:--------------------|
+*Sept 8, 2019*| My Personal Statement|[click here](ditl-firstblog.html)
 
 
-* My Personal Statement
- [post](ditl-firstblog.html)
+
+<br>

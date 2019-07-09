@@ -1,7 +1,8 @@
+
 ---
 title: "My Personal Statement"
 ---
-<link rel="stylesheet" href="style.css" >
+<link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
 
 I was born in a small town called 弋阳 in Jiangxi, China.Growing up being the only child in a loving family, my parents supports me in every way they possibly can. Thank you dad and mom for always believing in me and for your unconditional love. (In the bottom of this page is a pinned map of my hometown *Yiyang* )
 
@@ -49,5 +50,4 @@ m <- leaflet() %>%
 ```{r echo=FALSE, fig.width=4, fig.align='center', fig.height=4, message=FALSE, warning=FALSE}
 m  # Print the map
 ```
-
 
