@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+
+
+
+<title>Research</title>
+
+<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link href="site_libs/bootstrap-3.3.5/css/flatly.min.css" rel="stylesheet" />
+<script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/html5shiv.min.js"></script>
+<script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
+<script src="site_libs/jqueryui-1.11.4/jquery-ui.min.js"></script>
+<link href="site_libs/tocify-1.9.1/jquery.tocify.css" rel="stylesheet" />
+<script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
+<script src="site_libs/navigation-1.1/tabsets.js"></script>
+<link href="site_libs/font-awesome-5.1.0/css/all.css" rel="stylesheet" />
+<link href="site_libs/font-awesome-5.1.0/css/v4-shims.css" rel="stylesheet" />
+
+
+
+
+<style type="text/css">
+h1 {
+  font-size: 34px;
+}
+h1.title {
+  font-size: 38px;
+}
+h2 {
+  font-size: 30px;
+}
+h3 {
+  font-size: 24px;
+}
+h4 {
+  font-size: 18px;
+}
+h5 {
+  font-size: 16px;
+}
+h6 {
+  font-size: 12px;
+}
+.table th:not([align]) {
+  text-align: left;
+}
+</style>
+
+
+
+
+<style type = "text/css">
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+img {
+  max-width:100%;
+  height: auto;
+}
+.tabbed-pane {
+  padding-top: 12px;
+}
+.html-widget {
+  margin-bottom: 20px;
+}
+button.code-folding-btn:focus {
+  outline: none;
+}
+summary {
+  display: list-item;
+}
+</style>
+
+
+<style type="text/css">
+/* padding for bootstrap navbar */
+body {
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+/* offset scroll position for anchor links (for fixed navbar)  */
+.section h1 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h2 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h3 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h4 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h5 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.section h6 {
+  padding-top: 65px;
+  margin-top: -65px;
+}
+.dropdown-submenu {
+  position: relative;
+}
+.dropdown-submenu>.dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -6px;
+  margin-left: -1px;
+  border-radius: 0 6px 6px 6px;
+}
+.dropdown-submenu:hover>.dropdown-menu {
+  display: block;
+}
+.dropdown-submenu>a:after {
+  display: block;
+  content: " ";
+  float: right;
+  width: 0;
+  height: 0;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 5px 0 5px 5px;
+  border-left-color: #cccccc;
+  margin-top: 5px;
+  margin-right: -10px;
+}
+.dropdown-submenu:hover>a:after {
+  border-left-color: #ffffff;
+}
+.dropdown-submenu.pull-left {
+  float: none;
+}
+.dropdown-submenu.pull-left>.dropdown-menu {
+  left: -100%;
+  margin-left: 10px;
+  border-radius: 6px 0 6px 6px;
+}
+</style>
+
+<script>
+// manage active state of menu based on current page
+$(document).ready(function () {
+  // active menu anchor
+  href = window.location.pathname
+  href = href.substr(href.lastIndexOf('/') + 1)
+  if (href === "")
+    href = "index.html";
+  var menuAnchor = $('a[href="' + href + '"]');
+
+  // mark it active
+  menuAnchor.parent().addClass('active');
+
+  // if it's got a parent navbar menu mark it active as well
+  menuAnchor.closest('li.dropdown').addClass('active');
+});
+</script>
+
+<!-- tabsets -->
+
+<style type="text/css">
+.tabset-dropdown > .nav-tabs {
+  display: inline-table;
+  max-height: 500px;
+  min-height: 44px;
+  overflow-y: auto;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs > li.active:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li.active:before {
+  content: "&#xe258;";
+  border: none;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open:before {
+  content: "";
+  font-family: 'Glyphicons Halflings';
+  display: inline-block;
+  padding: 10px;
+  border-right: 1px solid #ddd;
+}
+
+.tabset-dropdown > .nav-tabs > li.active {
+  display: block;
+}
+
+.tabset-dropdown > .nav-tabs > li > a,
+.tabset-dropdown > .nav-tabs > li > a:focus,
+.tabset-dropdown > .nav-tabs > li > a:hover {
+  border: none;
+  display: inline-block;
+  border-radius: 4px;
+}
+
+.tabset-dropdown > .nav-tabs.nav-tabs-open > li {
+  display: block;
+  float: none;
+}
+
+.tabset-dropdown > .nav-tabs > li {
+  display: none;
+}
+</style>
+
+<script>
+$(document).ready(function () {
+  window.buildTabsets("TOC");
+});
+
+$(document).ready(function () {
+  $('.tabset-dropdown > .nav-tabs > li').click(function () {
+    $(this).parent().toggleClass('nav-tabs-open')
+  });
+});
+</script>
+
+<!-- code folding -->
+
+
+
+<script>
+$(document).ready(function ()  {
+
+    // move toc-ignore selectors from section div to header
+    $('div.section.toc-ignore')
+        .removeClass('toc-ignore')
+        .children('h1,h2,h3,h4,h5').addClass('toc-ignore');
+
+    // establish options
+    var options = {
+      selectors: "h1,h2,h3",
+      theme: "bootstrap3",
+      context: '.toc-content',
+      hashGenerator: function (text) {
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+      },
+      ignoreSelector: ".toc-ignore",
+      scrollTo: 0
+    };
+    options.showAndHide = true;
+    options.smoothScroll = true;
+
+    // tocify
+    var toc = $("#TOC").tocify(options).data("toc-tocify");
+});
+</script>
+
+<style type="text/css">
+
+#TOC {
+  margin: 25px 0px 20px 0px;
+}
+@media (max-width: 768px) {
+#TOC {
+  position: relative;
+  width: 100%;
+}
+}
+
+
+.toc-content {
+  padding-left: 30px;
+  padding-right: 40px;
+}
+
+div.main-container {
+  max-width: 1200px;
+}
+
+div.tocify {
+  width: 20%;
+  max-width: 260px;
+  max-height: 85%;
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+  div.tocify {
+    width: 25%;
+  }
+}
+
+@media (max-width: 767px) {
+  div.tocify {
+    width: 100%;
+    max-width: none;
+  }
+}
+
+.tocify ul, .tocify li {
+  line-height: 20px;
+}
+
+.tocify-subheader .tocify-item {
+  font-size: 0.90em;
+}
+
+.tocify .list-group-item {
+  border-radius: 0px;
+}
+
+
+</style>
+
+
+
+</head>
+
+<body>
+
+
+<div class="container-fluid main-container">
+
+
+<!-- setup 3col/9col grid for toc_float and main content  -->
+<div class="row-fluid">
+<div class="col-xs-12 col-sm-4 col-md-3">
+<div id="TOC" class="tocify">
+</div>
+</div>
+
+<div class="toc-content col-xs-12 col-sm-8 col-md-9">
+
+
+
+
+<div class="navbar navbar-inverse  navbar-fixed-top" role="navigation">
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <a class="navbar-brand" href="index.html">Yiyuan Wu</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+      <ul class="nav navbar-nav">
+        <li>
+  <a href="index.html">
+    <span class="fa fa-home"></span>
+     
+    Home
+  </a>
+</li>
+<li>
+  <a href="about.html">
+    <span class="fa fa-newspaper-o"></span>
+     
+    About
+  </a>
+</li>
+<li>
+  <a href="research.html">Research</a>
+</li>
+<li>
+  <a href="presentations.html">Presentations</a>
+</li>
+<li>
+  <a href="topics.html">
+    <span class="fa fa-leanpub"></span>
+     
+    Topics
+  </a>
+</li>
+<li>
+  <a href="blog.html">
+    <span class="fa fa-rss"></span>
+     
+    Blog
+  </a>
+</li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li>
+  <a href="contact.html">
+    <span class="fa fa-envelope fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="http://github.com/yiw1990">
+    <span class="fa fa-github fa-lg"></span>
+     
+  </a>
+</li>
+<li>
+  <a href="https://www.linkedin.com/in/yiyuan-wu-1a7599ab/">
+    <span class="fa fa-linkedin fa-lg"></span>
+     
+  </a>
+</li>
+      </ul>
+    </div><!--/.nav-collapse -->
+  </div><!--/.container -->
+</div><!--/.navbar -->
+
+<div class="fluid-row" id="header">
+
+
+
+<h1 class="title toc-ignore">Research</h1>
+
+</div>
+
+
+<p><link rel="stylesheet" href="site_libs/academicons-1.8.6/css/academicons.min.css"/></p>
+<div id="r-functions-i-wrote" class="section level3">
+<h3>R functions I wrote</h3>
+<div id="function-sw.power-for-step-wedge-design-in-clinical-trial" class="section level4">
+<h4>Function <code>sw.power</code> for Step Wedge Design in Clinical Trial</h4>
+<p>Clustered step wedge design cluster by site, practice and patient</p>
+<div align="left">
+<pre><code>      sw.power&lt;-function(cluster.n,
+      cluster.s,
+      time.n,
+      mu,
+      alpha,
+      b.trt1,
+      b.trt2=NULL,
+      int0.var=NULL,
+      int1.var=NULL,
+      int2.var=NULL,
+      int4.var=NULL,
+      urban.n=NULL,
+      n.sim, ...) {
+      
+                
+      data&lt;-make.swt(I=cluster.n, J=time.n, K=cluster.s, mu=0.2, b.trt=0.5, sigma.e=1.55, rho=0.4)
+      data$id&lt;-paste(data$cluster, data$person, sep=&quot;-&quot;)
+      data&lt;-data[order(data$id),]
+      data1&lt;-data %&gt;% group_by(id) %&gt;% mutate(treat_lagged = lag(treatment))
+      data1&lt;-data1 %&gt;% group_by(id) %&gt;% mutate(treat_lagged2 = lag(treat_lagged))
+      data1$treatment1&lt;-ifelse((data1$treat_lagged==1 &amp;data1$treat_lagged2==0) | (data1$treat_lagged==1 &amp;data1$treat_lagged2==1), 2, data1$treatment)
+      data1$treatment2&lt;-ifelse(is.na(data1$treatment1), data1$treatment, data1$treatment1)
+      drop &lt;- c(&quot;treatment&quot;,&quot;treatment1&quot;, &quot;treat_lagged&quot;, &quot;treat_lagged2&quot;, &quot;y&quot;, &quot;linpred&quot;)
+      df = data1[,!(names(data1) %in% drop)]
+      colnames(df )[colnames(df )==&quot;treatment2&quot;] &lt;- &quot;treatment&quot;
+      colnames(df )[colnames(df )==&quot;person&quot;] &lt;- &quot;practice&quot;
+      df$treatment1&lt;- ifelse(df$treatment==1, 1,0)
+      df$treatment2&lt;- ifelse(df$treatment==2, 1,0)
+      if (cluster.n*cluster.s==50){
+      len&lt;-length(unique(df$id))
+      urban&lt;-sample(unique(df$id), urban.n, replace = FALSE)   ## 30 and 20
+      
+      df$site&lt;-ifelse(df$id %in% c(urban), &quot;urban&quot;, &quot;rural&quot; )
+      df$site1&lt;-ifelse(df$id %in% c(urban), 1, 0 )
+      
+      } else if (cluster.n*cluster.s==45){
+      
+      len&lt;-length(unique(df$id))
+      urban&lt;-sample(unique(df$id), urban.n, replace = FALSE)  ## 30 and 15
+      df$site&lt;-ifelse(df$id %in% c(urban), &quot;urban&quot;, &quot;rural&quot; )
+      df$site1&lt;-ifelse(df$id %in% c(urban), 1, 0 )
+      }else{
+      len&lt;-length(unique(df$id))
+      urban&lt;-sample(unique(df$id), 2*len/3, replace = FALSE)
+      df$site&lt;-ifelse(df$id %in% c(urban), &quot;urban&quot;, &quot;rural&quot; )
+      df$site1&lt;-ifelse(df$id %in% c(urban), 1, 0 )
+      }
+      df$trt&lt;-ifelse(df$treatment==2, 1, df$treatment)
+      df$b.t&lt;-ifelse(df$time==0, 0, ifelse(df$time==1, 0, ifelse(df$time==2, -0.1,ifelse(df$time==3, -0.2, ifelse(df$time==4, -0.3, -0.4)))))
+      mu0=mu
+      pow.out&lt;-data.frame(matrix(nrow=n.sim, ncol=4 ))
+      colnames(pow.out)&lt;-c(&quot;pow.trt&quot; , &quot;pow.t&quot; ,&quot;ci.width.trt&quot; ,&quot;ci.width.t&quot;)
+      power&lt;-data.frame()
+      
+      alpha=alpha
+      b.trt1=b.trt1
+      b.trt2=b.trt2
+      
+      int1.var=   int1.var ## site
+      int2.var =  int2.var ## clsuter
+      int4.var =  int4.var ## treatment
+      int0.var =  int0.var ## practice
+      err.var = 1-sum(int0.var, int1.var, int2.var, int4.var)
+      
+      pow = NULL
+      ci.width = NULL
+      nrepl=n.sim
+      
+      for(repl in 1:n.sim){
+      cat(&quot;We are working on iteration&quot;, repl,  &quot;, repl&quot;, repl, &quot;\n&quot;)
+      if(is.null(int0.var) | int0.var==0){
+      df$rand.int.0 = 0
+      }else{
+      std.0 = rnorm(length(unique(df$id)),sd=sqrt(int0.var)) ### practice
+      df&lt;-df[order(df$id),]
+      df$rand.int.0 = rep(std.0,table(df$id))
+      }
+      
+      if(is.null(int1.var) | int1.var==0){
+      df$rand.int.1 = 0
+      }else{
+      std.1 = rnorm(length(unique(df$site1)),sd=sqrt(int1.var)) ### site
+      df&lt;-df[order(df$site1),]
+      df$rand.int.1 = rep(std.1,table(df$site1))
+      }
+      
+      if(is.null(int2.var) | int2.var==0){
+      df$rand.int.2 = 0
+      }else{
+      std.2 = rnorm(length(unique(df$cluster)),sd=sqrt(int2.var)) ### cluster
+      df&lt;-df[order(df$cluster),]
+      df$rand.int.2 = rep(std.2,table(df$cluster))
+      
+      }
+      
+      if(is.null(int4.var) | int4.var==0){
+      df$rand.int.4 = 0
+      }else{
+      std.4 = rnorm(length(unique(df$treatment)),sd=sqrt(int4.var)) ### for treatment
+      df&lt;-df[order(df$treatment),]
+      df$rand.int.4 = rep(std.4,table(df$treatment))
+      
+      }
+      ## fixed effect :
+      y = mu0 + b.trt1 *df$treatment +df$b.t
+      y = y  + df$rand.int.0+ df$rand.int.1+ df$rand.int.2+ df$rand.int.4+ rnorm(nrow(df),sd=sqrt(err.var))
+      
+      
+      m.form = paste(&quot;y ~ treatment + b.t+ (1|id) +(1|site1) +(1|cluster) &quot;, ifelse(!is.null(int4.var) &amp; int4.var &gt; 0, &quot;+(1|treatment)&quot;, &quot;&quot;))
+      out = data.frame(y=y,df)
+      m &lt;-  lmer(as.formula(m.form) , data=out)
+      
+      conf.int = confint(m,level=1-alpha,method=&quot;Wald&quot;)
+      pow.trt = c(pow,    conf.int[&quot;treatment&quot;,2] &lt; 0 |  conf.int[&quot;treatment&quot;,1] &gt; 0)
+      ci.width.trt = c(ci.width, diff(conf.int[&quot;treatment&quot;,1:2]))
+      
+      pow.t = c(pow,    conf.int[&quot;b.t&quot;,2] &lt; 0 |  conf.int[&quot;b.t&quot;,1] &gt; 0)
+      ci.width.t = c(ci.width, diff(conf.int[&quot;b.t&quot;,1:2]))
+      
+      newrow&lt;-c( pow.trt = pow.trt, pow.t = pow.t,ci.width.trt=ci.width.trt ,ci.width.t=ci.width.t)
+      pow.out[repl, ]&lt;-newrow
+      
+      }
+      p&lt;-c( cluster=cluster.n,
+      cluster.s,
+      b.trt1=b.trt1,
+      pow.trt=mean(pow.out$pow.trt),
+      pow.t=mean(pow.out$pow.t),
+      m.form=m.form,
+      practice=int0.var,
+      site=int1.var,
+      cluster=int2.var,
+      treatment=int4.var,
+      b.t=&quot; 0.0 -0.1 -0.2 -0.3 -0.4&quot;
+      )
+      
+      return(p)
+      
+      }</code></pre>
+</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+</div>
+
+<script>
+
+// add bootstrap table styles to pandoc tables
+function bootstrapStylePandocTables() {
+  $('tr.header').parent('thead').parent('table').addClass('table table-condensed');
+}
+$(document).ready(function () {
+  bootstrapStylePandocTables();
+});
+
+
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
