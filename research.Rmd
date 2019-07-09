@@ -1,0 +1,166 @@
+---
+title: "Research"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+  css: 'styles.css'
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = T, results = "hide")
+```
+
+
+<link rel="stylesheet" href="site_libs/academicons-1.8.6/css/academicons.min.css"/>
+
+### R functions I wrote
+
+#### Function `sw.power` for Step Wedge Design in Clinical Trial
+ Clustered step wedge design cluster by site, practice and patient
+
+<div align="left">
+          
+          sw.power<-function(cluster.n,
+          cluster.s,
+          time.n,
+          mu,
+          alpha,
+          b.trt1,
+          b.trt2=NULL,
+          int0.var=NULL,
+          int1.var=NULL,
+          int2.var=NULL,
+          int4.var=NULL,
+          urban.n=NULL,
+          n.sim, ...) {
+          
+                    
+          data<-make.swt(I=cluster.n, J=time.n, K=cluster.s, mu=0.2, b.trt=0.5, sigma.e=1.55, rho=0.4)
+          data$id<-paste(data$cluster, data$person, sep="-")
+          data<-data[order(data$id),]
+          data1<-data %>% group_by(id) %>% mutate(treat_lagged = lag(treatment))
+          data1<-data1 %>% group_by(id) %>% mutate(treat_lagged2 = lag(treat_lagged))
+          data1$treatment1<-ifelse((data1$treat_lagged==1 &data1$treat_lagged2==0) | (data1$treat_lagged==1 &data1$treat_lagged2==1), 2, data1$treatment)
+          data1$treatment2<-ifelse(is.na(data1$treatment1), data1$treatment, data1$treatment1)
+          drop <- c("treatment","treatment1", "treat_lagged", "treat_lagged2", "y", "linpred")
+          df = data1[,!(names(data1) %in% drop)]
+          colnames(df )[colnames(df )=="treatment2"] <- "treatment"
+          colnames(df )[colnames(df )=="person"] <- "practice"
+          df$treatment1<- ifelse(df$treatment==1, 1,0)
+          df$treatment2<- ifelse(df$treatment==2, 1,0)
+          if (cluster.n*cluster.s==50){
+          len<-length(unique(df$id))
+          urban<-sample(unique(df$id), urban.n, replace = FALSE)   ## 30 and 20
+          
+          df$site<-ifelse(df$id %in% c(urban), "urban", "rural" )
+          df$site1<-ifelse(df$id %in% c(urban), 1, 0 )
+          
+          } else if (cluster.n*cluster.s==45){
+          
+          len<-length(unique(df$id))
+          urban<-sample(unique(df$id), urban.n, replace = FALSE)  ## 30 and 15
+          df$site<-ifelse(df$id %in% c(urban), "urban", "rural" )
+          df$site1<-ifelse(df$id %in% c(urban), 1, 0 )
+          }else{
+          len<-length(unique(df$id))
+          urban<-sample(unique(df$id), 2*len/3, replace = FALSE)
+          df$site<-ifelse(df$id %in% c(urban), "urban", "rural" )
+          df$site1<-ifelse(df$id %in% c(urban), 1, 0 )
+          }
+          df$trt<-ifelse(df$treatment==2, 1, df$treatment)
+          df$b.t<-ifelse(df$time==0, 0, ifelse(df$time==1, 0, ifelse(df$time==2, -0.1,ifelse(df$time==3, -0.2, ifelse(df$time==4, -0.3, -0.4)))))
+          mu0=mu
+          pow.out<-data.frame(matrix(nrow=n.sim, ncol=4 ))
+          colnames(pow.out)<-c("pow.trt" , "pow.t" ,"ci.width.trt" ,"ci.width.t")
+          power<-data.frame()
+          
+          alpha=alpha
+          b.trt1=b.trt1
+          b.trt2=b.trt2
+          
+          int1.var=   int1.var ## site
+          int2.var =  int2.var ## clsuter
+          int4.var =  int4.var ## treatment
+          int0.var =  int0.var ## practice
+          err.var = 1-sum(int0.var, int1.var, int2.var, int4.var)
+          
+          pow = NULL
+          ci.width = NULL
+          nrepl=n.sim
+          
+          for(repl in 1:n.sim){
+          cat("We are working on iteration", repl,  ", repl", repl, "\n")
+          if(is.null(int0.var) | int0.var==0){
+          df$rand.int.0 = 0
+          }else{
+          std.0 = rnorm(length(unique(df$id)),sd=sqrt(int0.var)) ### practice
+          df<-df[order(df$id),]
+          df$rand.int.0 = rep(std.0,table(df$id))
+          }
+          
+          if(is.null(int1.var) | int1.var==0){
+          df$rand.int.1 = 0
+          }else{
+          std.1 = rnorm(length(unique(df$site1)),sd=sqrt(int1.var)) ### site
+          df<-df[order(df$site1),]
+          df$rand.int.1 = rep(std.1,table(df$site1))
+          }
+          
+          if(is.null(int2.var) | int2.var==0){
+          df$rand.int.2 = 0
+          }else{
+          std.2 = rnorm(length(unique(df$cluster)),sd=sqrt(int2.var)) ### cluster
+          df<-df[order(df$cluster),]
+          df$rand.int.2 = rep(std.2,table(df$cluster))
+          
+          }
+          
+          if(is.null(int4.var) | int4.var==0){
+          df$rand.int.4 = 0
+          }else{
+          std.4 = rnorm(length(unique(df$treatment)),sd=sqrt(int4.var)) ### for treatment
+          df<-df[order(df$treatment),]
+          df$rand.int.4 = rep(std.4,table(df$treatment))
+          
+          }
+          ## fixed effect :
+          y = mu0 + b.trt1 *df$treatment +df$b.t
+          y = y  + df$rand.int.0+ df$rand.int.1+ df$rand.int.2+ df$rand.int.4+ rnorm(nrow(df),sd=sqrt(err.var))
+          
+          
+          m.form = paste("y ~ treatment + b.t+ (1|id) +(1|site1) +(1|cluster) ", ifelse(!is.null(int4.var) & int4.var > 0, "+(1|treatment)", ""))
+          out = data.frame(y=y,df)
+          m <-  lmer(as.formula(m.form) , data=out)
+          
+          conf.int = confint(m,level=1-alpha,method="Wald")
+          pow.trt = c(pow,    conf.int["treatment",2] < 0 |  conf.int["treatment",1] > 0)
+          ci.width.trt = c(ci.width, diff(conf.int["treatment",1:2]))
+          
+          pow.t = c(pow,    conf.int["b.t",2] < 0 |  conf.int["b.t",1] > 0)
+          ci.width.t = c(ci.width, diff(conf.int["b.t",1:2]))
+          
+          newrow<-c( pow.trt = pow.trt, pow.t = pow.t,ci.width.trt=ci.width.trt ,ci.width.t=ci.width.t)
+          pow.out[repl, ]<-newrow
+          
+          }
+          p<-c( cluster=cluster.n,
+          cluster.s,
+          b.trt1=b.trt1,
+          pow.trt=mean(pow.out$pow.trt),
+          pow.t=mean(pow.out$pow.t),
+          m.form=m.form,
+          practice=int0.var,
+          site=int1.var,
+          cluster=int2.var,
+          treatment=int4.var,
+          b.t=" 0.0 -0.1 -0.2 -0.3 -0.4"
+          )
+          
+          return(p)
+          
+          }
+
+</div>
