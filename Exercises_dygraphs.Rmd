@@ -1,0 +1,202 @@
+---
+title: "Dygraphs"
+author: "Yiyuan Wu, MS"
+date: "`r format(Sys.time(), '%B %d, %Y')`"
+output:
+  html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(kableExtra);library(dplyr)
+
+```
+
+### Basics
+* `dygraph()` is the main function to call
+
+  + data : **enter either time series data or data frame(numeric), for numeric data, the first column has to be the time.**
+
+* Range selector `dyRangeSelector()` : we can pipe this onto the original graph which let us select regions to look at
+
+* `dySeries()` : display series and customize
+
+* `dyOptions()` : specify color palette for series lines using colors option
+  
+            + `includeZero` 
+            + `axisLineColor` 
+            + `gridLineCOlor` 
+            
+* `dyShading()` : shading from chose time periods
+
+* `dyAxis()` :drawFrid, fillGraph options
+
+* time zones : dygraphs display time-series using time zone of the work machine. You can choose time zone withing the xts objset using `useDataTimezone` option
+
+* Roll Periods `dyRoller()` : smooth out the display of a series,  plotted point representing the average of the number of the time stamps in roll periods.
+
+
+We will use ts datasets::EuStockMarkets dataset to demonstrate using dygraphs package
+
+###  **EuStockMarkets**
+
+*Description*
+
+- daily closing prices of major stock indeces: DAX, SMI, CAC and FTSE
+
+- 1860 observations and 4 variables
+
+- mts object
+
+- from 1991 - 1998. The data are sampled in business time, i.e., weekends and holidays are omitted.
+
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+ts<-datasets::EuStockMarkets
+kable(cbind(head(time(ts), 6), head(ts, 6)), format="pandoc")
+```
+
+
+###  Exercise step by step {.tabset .tabset-fade .tabset-pills}
+#### range selecting that allows zooming
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+#install.packages("dygraphs")
+library(dygraphs);library(xts); 
+dt<-data.frame(date=time(ts),as.matrix(ts))
+dt$date=round(dt$date, 3)
+
+## our data is sorted if not you need to sort by dates 
+## load lubridate and xts 
+## data$datetime= ymd_hms(data$datetime)
+## then xts(x= data$Y, order.by=data$datetime)
+## logscale == TRUE , specify in axis , ignored if x is date format 
+dygraph(dt, main="European Stock Closing Price")%>%
+dyRangeSelector()%>%dyLegend(show = "follow")%>%
+  dyAxis("x",   axisLabelColor="black", axisLabelFontSize=1,   axisLineColor="red")
+
+```
+
+#### always show legends
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+dygraph(dt, main="European Stock Closing Price")%>%
+dyRangeSelector()%>%dyLegend(show = "always")
+
+
+```
+
+#### Shading and Annotations + Vertical Shading
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+dygraph(dt, main="European Stocks")%>%
+ #dySeries(label="DAX", color="black")%>% 
+  dyLegend(show = "always", hideOnMouseOut = FALSE)%>%
+  dyShading(from="1995", to="1996", color="#FFE6E6") %>%
+  dyShading(from="1997", to="1998", color="#CCEBD6")
+
+```
+
+#### horizontal shading
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+mean<-apply(dt[,-1], 2, mean)
+std<-apply(dt[,-1], 2, sd)
+lower=mean-std
+upper=mean+std
+
+dygraph(dt, main="European Stocks")%>%
+  dySeries(label="DAX", color="black") %>%
+  dyShading(from=lower[1], to=upper[1], color="lightblack", axis = "y") 
+
+```
+
+
+#### Axis and Options 
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+
+dygraph(dt, main = "EU stock") %>%
+  dyAxis("y", label = "Stock Closing Price", valueRange = c(0, 10000)) %>%
+  dyOptions(axisLineWidth = 1.5, 
+            fillGraph = TRUE, 
+            drawGrid = TRUE,
+            colors = RColorBrewer::brewer.pal(4, "Dark2"),
+            includeZero = TRUE, 
+            axisLineColor = "navy", 
+            gridLineColor = "lightblue")
+
+
+```
+
+
+
+###  Exercise step by step {.tabset .tabset-fade .tabset-pills}
+####  before use `useDataTimezone ` option
+
+![*does not plot in the correct zone*](images\Capture_tz_example.png)
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+##install.packages("xts")
+library(xts)
+
+ts.ran=seq.POSIXt(as.POSIXct("2019-01-01", tz="MST"),as.POSIXct("2019-07-02", tz="MST"), by="4 hours")
+
+set.seed(123)
+Y = rnorm(length(ts.ran))
+
+## create time series object
+serie= xts(Y, order.by = ts.ran, tz="MST")
+
+dygraph(serie)%>%dyOptions(drawPoints = TRUE, pointSize = 2)%>%
+dyRangeSelector()
+
+```
+
+
+#### after use `useDataTimezone ` option
+
+![*Correct!*](images\Capture_tz_after_example.png)
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+dygraph(serie)%>%
+dyRangeSelector()%>% dyOptions(useDataTimezone = TRUE, drawPoints = TRUE, pointSize = 2)
+
+```
+
+
+### More {.tabset .tabset-fade .tabset-pills}
+
+#### Roll Periods `dyRoller()` 
+
+In order to smooth out the series, we can use `rollPerid` = _a number you choose_. Add a rolling average period text box to the bottom left of the plot. Y values are averaged over the specified number of time scale units(e.g. days, months, years)
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+
+dygraph(serie, main = "simulated time series") %>%
+dyRangeSelector()%>% dyOptions(useDataTimezone = TRUE, drawPoints = TRUE, pointSize = 2)%>% dyRoller(rollPeriod = 6)
+
+
+```
+
+
+
+#### stemPlot
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+dygraph(serie, main = "simulated time series") %>%
+dyRangeSelector()%>% dyOptions(useDataTimezone = TRUE, drawPoints = TRUE, pointSize = 2)%>%dyOptions( stemPlot=TRUE)
+
+```
+
+#### stepPlot
+
+```{r, warning=FALSE, message=FALSE, error=FALSE}
+
+dygraph(serie, main = "simulated time series") %>%
+dyRangeSelector()%>% dyOptions(useDataTimezone = TRUE, drawPoints = TRUE, pointSize = 2)%>%dyOptions( stepPlot=TRUE)
+
+```

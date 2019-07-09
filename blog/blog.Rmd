@@ -1,0 +1,34 @@
+---
+title: "Blog"
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+---
+<link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
+
+<br>
+
+<center>   
+
+<br>
+
+<img src="../images/family.JPG" alt="family" style="width:50%; border:0px solid">
+
+<br>
+
+**My 4th birthday **
+
+</center>
+
+<br><br>
+
+
+
+### 2019
+
+
+* My Personal Statement
+ [post](ditl-firstblog.html)
