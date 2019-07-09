@@ -9,7 +9,7 @@ output:
   css: 'styles.css'
   
 ---
-<link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
+<link rel="stylesheet" href="site_libs/academicons-1.8.6/css/academicons.min.css"/>
 
 <br>
 
@@ -17,7 +17,7 @@ output:
 
 <br>
 
-<img src="../images/yiyuan_may2019.JPG" alt="presentation" style="width:30%; border:0px solid">
+<img src="images/yiyuan_may2019.JPG" alt="presentation" style="width:30%; border:0px solid">
 
 <br>
 
