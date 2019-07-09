@@ -9,23 +9,8 @@ output:
   css: 'styles.css'
   
 ---
-<link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
+<link rel="stylesheet" href="site_libs/academicons-1.8.6/css/academicons.min.css"/>
 
-<br>
-
-<center>   
-
-<br>
-
-<img src="images/yiyuan_may2019.JPG" alt="presentation" style="width:50%; border:0px solid">
-
-<br>
-
-**Poster presentation at Yale Symposium, 2019**
-
-</center>
-
-<br><br>
 
 ### 2019
 
