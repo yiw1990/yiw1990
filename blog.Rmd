@@ -4,9 +4,8 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: flatly
+    theme: united
     highlight: tango
-    css: 'styles.css'
 ---
 <link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
 <br>
@@ -15,7 +14,7 @@ output:
 
 <br>
 
-<img src="images/family.JPG" alt="family" style="width:50%; border:0px solid">
+<img src="../images/family.JPG" alt="family" style="width:50%; border:0px solid">
 
 <br>
 
