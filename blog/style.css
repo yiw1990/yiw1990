@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ﻿/* Whole document: */
 body{
   font-family: Helvetica;
@@ -6,4 +7,14 @@ body{
 /* Headers */
 h1,h2,h3,h4,h5,h6{
   font-size: 24pt;
+=======
+﻿/* Whole document: */
+body{
+  font-family: Helvetica;
+  font-size: 16pt;
+}
+/* Headers */
+h1,h2,h3,h4,h5,h6{
+  font-size: 24pt;
+>>>>>>> b55c26c792a9360c3b218334c95a7a453d2ba286
 }

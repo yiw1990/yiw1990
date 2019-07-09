@@ -28,9 +28,9 @@ navbar:
       
 output:
   html_document:
-    theme: flatly
-    highlight: tango
-    css: 'styles.css'
+    theme: cosmo
+    highlight: textmate
+  css: 'styles.css'
   
   
   
