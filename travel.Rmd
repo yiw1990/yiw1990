@@ -1,15 +1,20 @@
 ---
+fontsize: 30pt
 ---
 
 <link rel="stylesheet" href="styles.css" type="text/css">
 
-## Peru 2018
+<center>
+## Travel Photo Gallary 
+</center>
 
 <img src="images/peru-1.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="left">
 
 <img src="images/peru-2.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="right">
 
-
+<br>
+<center> **Machu Picchu**</center>
+</br>
 
 <img src="images/peru-3.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="left">
 
