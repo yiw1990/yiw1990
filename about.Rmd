@@ -2,9 +2,9 @@
 title: <center> Welcome to Yiyuan's hub! </center>
 output: 
   html_document:
-    theme: cosmo
+    theme: flatly
     highlight: tango
-    css: styles.css
+    css: "styles.css"
 ---
 
 <br>

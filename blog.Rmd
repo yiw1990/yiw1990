@@ -4,7 +4,7 @@ output:
   html_document:
     toc: true
     toc_float: true
-    theme: united
+    theme: flatly
     highlight: tango
 ---
 <link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
