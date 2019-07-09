@@ -1,0 +1,16 @@
+---
+---
+
+<link rel="stylesheet" href="styles.css" type="text/css">
+
+## Peru 2018
+
+<img src="images/peru-1.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="left">
+
+<img src="images/peru-2.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="right">
+
+
+
+<img src="images/peru-3.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="left">
+
+<img src="images/peru-4.jpg" style="width:50%; border:10px solid; margin-right: 20px" align="right">

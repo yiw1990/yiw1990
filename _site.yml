@@ -22,6 +22,9 @@ navbar:
     - text: "Blog"
       icon: fa-rss
       href: blog.html
+    - text: "travel"
+      icon: fa-plane
+      href: travel.html
   right:
     - icon: fa-envelope fa-lg
       href: contact.html
