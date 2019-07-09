@@ -6,6 +6,8 @@ output:
     toc_float: true
     theme: flatly
     highlight: tango
+  css: 'styles.css'
+  
 ---
 <link rel="stylesheet" href="../site_libs/academicons-1.8.6/css/academicons.min.css"/>
 

@@ -28,8 +28,8 @@ navbar:
       
 output:
   html_document:
-    theme: cosmo
-    highlight: textmate
+    theme: flatly
+    highlight: tango
   css: 'styles.css'
   
   
