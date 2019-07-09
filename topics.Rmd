@@ -1,0 +1,18 @@
+---
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    theme: flatly
+    highlight: tango
+  css: 'styles.css'
+---
+## Papers 
+### July 2019
+
+#### 1. *P. Saha1,2 and P. J. Heagerty1*  Time-Dependent Predictive Accuracy in the Presence of Competing Risks [Paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4512205/)
+
+## Books 
+### July 2019
+
+#### 1. Deep Medicine by *Eric Topol*
