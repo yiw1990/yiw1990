@@ -9,14 +9,16 @@ navbar:
       href: index.html
     - text: "About"
       icon: fa-newspaper-o
-      href: about.html
-    - text: "Research"
-      href: research.html
-    - text: "Presentations"
-      href: presentations.html
-    - text: "Topics"
-      icon: fa-leanpub
-      href: topics.html
+      menu:
+      - text: "About this page"
+        href: about.html
+      - text: "My research experience"
+        href: research.html
+      - text: "Presentations"
+        href: presentations.html
+      - text: "Topics I am interested"
+        icon: fa-leanpub
+        href: topics.html
     - text: "Blog"
       icon: fa-rss
       href: blog.html
