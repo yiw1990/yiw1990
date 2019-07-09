@@ -2,6 +2,7 @@ name: "Yiyuan Wu"
 output_dir: "."
 navbar:
   title: "Yiyuan Wu"
+  type: inverse
   left:
     - text: "Home"
       icon: fa-home
