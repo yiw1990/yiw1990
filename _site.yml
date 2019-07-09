@@ -11,7 +11,7 @@ navbar:
       icon: fa-newspaper-o
       href: about.html
     - text: "Research"
-      href: Research.html
+      href: research.html
     - text: "Presentations"
       href: presentations.html
     - text: "Topics"
