@@ -33,11 +33,11 @@ output:
 
 * Weill Cornell Medicine Biostatistics Computing Club, New York, NY, July 2, 2019
 
-    + *An Overview of dygraphs package in R*   | [PDF](..\slides\dygraphs_ppt_rmd.pdf)
+    + *An Overview of dygraphs package in R*   | [PDF](\slides\dygraphs_ppt_rmd.pdf)
     
 * Yale University Thomas R. Ten Have Symposium, New Haven, CT, May 31, 2019
 
-    + *Dynamic prognosis of psychotic depression: a Bayesian joint modeling approach*   | [Poster](..\poster\Yiyuan_Poster_MH_May2019_SB.pptx)
+    + *Dynamic prognosis of psychotic depression: a Bayesian joint modeling approach*   | [Poster](\poster\Yiyuan_Poster_MH_May2019_SB.pptx)
     
 
     
