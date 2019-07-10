@@ -7,12 +7,13 @@ output:
     highlight: tango
   css: 'styles.css'
 ---
-## Papers 
-### July 2019
+## July 2019
 
-#### 1. *P. Saha1,2 and P. J. Heagerty1*  Time-Dependent Predictive Accuracy in the Presence of Competing Risks [Paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4512205/)
+### Books, topics, papers I am reading
 
-## Books 
-### July 2019
+1. *P. Saha1,2 and P. J. Heagerty1*  Time-Dependent Predictive Accuracy in the Presence of Competing Risks [Paper](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4512205/)
 
-#### 1. Deep Medicine by *Eric Topol*
+2. Deep Medicine by *Eric Topol*
+
+3. [Target Learning in Biomedical big data](https://vanderlaan-group.github.io/tlbbd-sp2018/)
+
